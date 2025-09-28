@@ -1,24 +1,21 @@
 # Docker Workflows
 
-Shows a job that runs in a container plus a MongoDB service container.
+Container job plus MongoDB service.
 
-## What it shows
+## Purpose
+Run tests against a real database inside CI.
 
-- `container:` job definition (Node image)
-- `services:` for MongoDB
-- Using service name as host
-- Caching deps inside container job
+## Highlights
+- Job-level `container` image
+- MongoDB service container
+- Hostname = service name
+- Dependency cache inside container
 
 ## Flow
+Start DB service → run app/tests in container.
 
-Run tests against a real MongoDB instance, then (in later steps) could deploy.
-
-## Tips
-
-- Use official images when possible
-- Keep service names simple; they become hostnames
-- Only add containers when you need them (don’t overuse)
+## Notes
+Add containers only when they give needed parity.
 
 ## Next
-
-See `security` for permission and safety examples.
+`security`
